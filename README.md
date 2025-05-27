@@ -62,16 +62,23 @@ ggplot(heartfailure_data, aes(x = diabetes, fill = DEATH_EVENT)) + </br>
        y = "Count", </br>
        fill = "Death Event") + </br>
   theme_minimal() </br>
+![rplot1](Hplot1.jpeg)
+  
 
 heartfailure_data$high_blood_pressure <- as.factor(heartfailure_data$high_blood_pressure) </br>
 heartfailure_data$DEATH_EVENT <- as.factor(heartfailure_data$DEATH_EVENT)
 
 ggplot(heartfailure_data, aes(x = high_blood_pressure, fill = DEATH_EVENT)) + </br>
-  geom_bar(position = "dodge") + </br>
+  geom_bar(position = "dodge") + scale_fill_manual(values = c( </br>
+    "0" = "lightblue2", </br>
+    "1" = "lightpink4" </br>
+  )) + </br>
   labs(title = "High Blood Pressure vs Death Event", </br>
        x = "Diabetes (0 = No, 1 = Yes)", </br>
        y = "Count", </br>
        fill = "Death Event") + </br>
   theme_minimal()
+
+![rplot2!](hplot2.jpeg) 
 
 ---
